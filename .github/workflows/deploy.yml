@@ -1,9 +1,9 @@
-name: Deploy
+name: Deploy to w7s
 
 on:
   push:
     branches:
-      - Main   # ← 大文字のMに修正
+      - Main
   workflow_dispatch:
 
 permissions:
@@ -18,6 +18,5 @@ jobs:
       - uses: w7s-io/w7s-cloud@v1
         with:
           token: ${{ github.token }}
-          install-command: npm ci   # 依存関係のインストール
-          build-command: npm run build   # ビルドの実行
-          working-directory: .   # リポジトリのルート
+          install-command: npm ci
+          build-command: npm run build
